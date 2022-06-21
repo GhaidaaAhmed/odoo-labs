@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+        <template id="hms_patient_template">
+             <style type="text/css">
+                .odd_t tr:nth-child(even) {
+                  background-color: #D6EEEE;
+                }
+            </style>
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="patient">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="row">
+                                <table>
+                                    <tr align="center" valign="center">
+                                        <td>
+                                            <h1>Patient Status Report</h1>
+                                        </td>
+                                        <td style="width:110pt;height:110pt">
+                                            <span t-field="patient.image" t-options='{"widget": "image"}'/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: 19px;">Name:</span>
+                                            <span t-field="patient.first_name"/> <span t-field="patient.last_name"/>
+                                        </td>
+                                        <td>
+                                            <span style="font-size: 19px;">Birth date:</span>
+                                            <span t-field="patient.birth_date"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: 19px;">Age:</span>
+                                            <span t-field="patient.age"/>
+                                        </td>
+                                        <td>
+                                            <span style="font-size: 19px;">PCR:</span>
+                                            <span t-field="patient.cr_ratio"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: 19px;">Department:</span>
+                                            <span t-field="patient.department_id"/>
+                                        </td>
+                                        <td>
+                                            <span style="font-size: 19px;">Blood type:</span>
+                                            <span t-field="patient.blood_type"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: 19px;">Doctor:</span>
+                                             <t t-foreach="patient.doctor_ids" t-as="dr">
+                                                <span t-field="dr.first_name"/>,
+                                             </t>
+                                        </td>
+                                        <td>
+                                            <span style="font-size: 19px;">Email:</span>
+                                            <span t-field="patient.email"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <h3>Log History</h3>
+                            </div>
+                            <div class="row">
+                                <table style="border: 1px solid black;width:250pt" align="center" valign="center">
+                                    <tr style="border: 1px solid black;background-color:blue">
+                                        <th style="border: 1px solid black;">User</th>
+                                        <th style="border: 1px solid black;">Date</th>
+                                        <th style="border: 1px solid black;">Info</th>
+                                    </tr>
+                                    <t t-foreach="patient.log_history" t-as="log">
+                                        <tr style="border: 1px solid black;background-color:coral">
+                                            <td style="border: 1px solid black;" align="center" valign="center">
+                                                <span t-field="log.create_uid.name"/>
+                                            </td>
+                                            <td style="border: 1px solid black;">
+                                                <span t-field="log.create_date"/>
+                                            </td>
+                                            <td style="border: 1px solid black;">
+                                                <span t-field="log.description"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

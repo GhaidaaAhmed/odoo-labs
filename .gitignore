@@ -1,0 +1,5 @@
+.venv/
+odoo-venv/
+.idea/
+odoo/odoo.conf
+odoo/requirements.txt
