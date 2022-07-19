@@ -1,0 +1,79 @@
+<odoo>
+    <data>
+        <template id="vca_certificate_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="cer">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="row" dir="rtl">
+                                <table>
+                                    <tr align="center" valign="center">
+                                        <td>
+                                            <h1 style="font-color: red">شهادة صلاحية</h1>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: 19px;">السيد اللواء مدير ادارة مرور :</span>
+                                            <span t-field="cer.traffic_department_id"/>
+                                        </td>
+                                        <td>
+                                            <span style="font-size: 19px;">تحريرا في </span>
+                                            <span t-field="cer.create_date"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <span style="font-size: 19px;text-align:center">تحية طيبه و بعد </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <span style="font-size: 19px;">أتشرف بافادة سيادتكم بأنه تم نعديل /</span>
+                                            <span t-field="cer.certificate_type_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: 19px;">شاسيه رقم /</span>
+                                            <span t-field="cer.chassis_number"/>
+                                        </td>
+                                        <td>
+                                            <span style="font-size: 19px;">محرك رقم /</span>
+                                            <span t-field="cer.motor_number"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: 19px;">الماركة /</span>
+                                            <span t-field="cer.brand_id"/>
+                                        </td>
+                                        <td>
+                                            <span style="font-size: 19px;">موديل /</span>
+                                            <span t-field="cer.car_model"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: 19px;">اسم المالك /</span>
+                                            <span t-field="cer.customer_id"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="row" dir="rtl">
+                                <p>
+                                    حيث أن المزسسة معتمدة بالهيئة العامة للتنمية الصناعية ومصلحة الرقابة الصناعية ومعتمدة بإدارات المرور ولها سجل تجاري صناعي
+                                    وبطاقة ضريبية بهذه الصفة وقد تم فحص التعديل والتركيب واللحامات والإصلاحات اللازمة طبقا لأصول الصناعة ودون الإخلال بالتصميم
+                                    الاصلي ودون المساس بالأجزاء الجوهرية للسيارة وقد تم تجربة السيارة على الطرق المصرية ووجد أنها متزنة وهذه شهادة منا بنلك لتقديمها
+                                    للمرور والمالك مسؤول مسئولية كاملة عن بيانات الشهادة فبرجاء التكرم والتفضل بالموافقة على ترخيص السيارة
+                                </p>
+                                <p>و تفضلوا بقبول فائق الاحترام و التقدير ,,,</p>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
